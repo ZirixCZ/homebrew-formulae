@@ -9,5 +9,6 @@ class CmusRpcC < Formula
     system "mkdir -p bin"
     system "gcc main.c -o bin/cmus_rpc_c -I. -L./lib/aarch64 -Wl,-rpath,@loader_path/../lib/aarch64 ./lib/aarch64/discord_game_sdk.dylib"
     bin.install "#{buildpath}/bin/cmus_rpc_c"
+    lib.install "#{buildpath}/lib"
   end
 end
