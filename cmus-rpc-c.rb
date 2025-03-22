@@ -6,8 +6,8 @@ class CmusRpcC < Formula
   head "https://github.com/ZirixCZ/cmus-rpc-c.git"
 
   def install
+    lib.install "#{buildpath}"
     system "gcc", "main.c", "-o", "#{bin}/cmus_rpc_c", "-I.", "-L./lib/lib/aarch64", "-Wl,-rpath,@loader_path/../lib/lib/aarch64", "./lib/lib/aarch64/discord_game_sdk.dylib"
     bin.install "#{bin}/cmus_rpc_c"
-    lib.install "#{buildpath}"
   end
 end
